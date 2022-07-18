@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -26,6 +27,7 @@ public class MySecuredUsers implements Serializable, Comparable<MySecuredUsers> 
 	@Size(min = 5)
 	@NotNull
 	private String password;
+	@Min(message = "Minimum age is 18", value = 18)
 	private int age;
 	@Column(length = 8)
 	private long pincode;
